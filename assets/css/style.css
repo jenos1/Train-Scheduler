@@ -1,0 +1,30 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+/*  background: url(../images/green_cup.png);*/
+}
+
+.container {
+/*	background: #1e4d99;*/
+}
+
+.jumbotron.title {
+	text-align: center;
+	background-color: #1e4d99;
+	color: black;
+}
+
+/*.train {
+	border-style: solid;
+	border-width: 2px;
+}*/
+
+h3 {
+	background-color: #79a2e5;
+	padding-top: 15px;
+	padding-bottom: 15px;
+	padding-left: 16px;
+}
