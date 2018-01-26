@@ -17,18 +17,31 @@ body {
 	color: black;
 }
 .title {
-	padding-left: 10px;
+/*	padding-left: 10px;*/
 	padding-top: 10px;
 	padding-bottom: 10px;
 	background: #c0c9d8;
-
+}
+.panel-body {
+	margin-top: 0px;
 }
 
-.train-table, #train-list, th, td {
-	border: 2px solid #bbbec1;
+.train-table, #train-list, th, tr, td {
+	border: 1.5px solid #bbbec1;
+	border-collapse: collapse;
 	width: 100%;
+	margin-top: 2px;
 }
 
+div.panel {
+	border: .5px solid #1e4d99;
+/*	padding-left: 10px;
+	padding-right: 10px;*/
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
 th, td {
     padding: 15px;
     text-align: left;
