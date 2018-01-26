@@ -34,11 +34,12 @@ $("#submit").on("click", function(event) {
 	console.log("time:", time);
 	console.log("freq:", freq);
 
+
 	var trainInput = {
 		name: name,
 		dest: dest,
 		time: time,
-		freq: freq
+		freq: freq,
 	}
 	database.ref("trains").push(trainInput);
 })
@@ -48,14 +49,14 @@ $("#submit").on("click", function(event) {
 		// $("#train-table tr").remove(); 
 		// $("#list tbody").remove();
 		$("#train-list").append(
-		"<tr><td>" + name + dest + time + freq + nextArrival + minsAway + "</td></tr>");
-		// "<tr><td>" + name +
-		// "<tr><td>" + dest +	
-		// "<tr><td>" + time +	
-		// "<tr><td>" + freq +
-		// "<tr><td>" + nextArrival +
-		// "<tr><td>" + minsAway +
-		// "<td><tr>");
+		// "<tr><td>" + name + dest + time + freq + nextArrival + minsAway + "</td></tr>");
+		"<tr><td>" + name +
+		"<tr><td>" + dest +	
+		"<tr><td>" + time +	
+		"<tr><td>" + freq +
+		"<tr><td>" + nextArrival +
+		"<tr><td>" + minsAway +
+		"<td><tr>");
 
 	})
 

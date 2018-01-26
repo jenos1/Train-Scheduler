@@ -8,7 +8,7 @@ body {
 }
 
 .container {
-/*	background: #1e4d99;*/
+
 }
 
 .jumbotron.title {
@@ -17,7 +17,6 @@ body {
 	color: black;
 }
 .title {
-/*	padding-left: 10px;*/
 	padding-top: 10px;
 	padding-bottom: 10px;
 	background: #c0c9d8;
@@ -26,25 +25,48 @@ body {
 	margin-top: 0px;
 }
 
+div.panel-body {
+	margin-bottom:0px;
+	padding: 0px;
+}
+
 .train-table, #train-list, th, tr, td {
-	border: 1.5px solid #bbbec1;
-	border-collapse: collapse;
 	width: 100%;
 	margin-top: 2px;
+	margin-left: 10px;
+	margin-right: 10px;
+	margin-bottom:0;
+	border-bottom:0;
+}
+
+label, h3, th, td {
+	padding-left: 5px;
+}
+td {
+	padding-right: 10px;
+
+
+}
+div.form-group {
+	margin: 0px 10px;
+}
+
+#submit, #reset {
+	margin-left: 10px;
+	margin-top: 10px;
+	margin-bottom: 10px;
 }
 
 div.panel {
 	border: .5px solid #1e4d99;
-	padding-left: 0px;
+	padding-left: 10px;
 	padding-right: 0px;
+	padding:0;
 }
 
-tr:nth-child(even) {
-    background-color: #dddddd;
-}
 th, td {
-    padding: 15px;
     text-align: left;
+    width: 20%;
 }
 
 h2 {
@@ -53,3 +75,4 @@ h2 {
 	padding-bottom: 35px;
 	padding-left: 16px;
 }
+
