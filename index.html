@@ -4,8 +4,9 @@
 	<meta charset="UTF-8">
 	<title> Train Scheduler </title>
 	<script defer src="https://use.fontawesome.com/releases/v5.0.1/js/all.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.20.1/moment.min.js"></script>
 	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 </head>
 
 <body>
@@ -13,16 +14,16 @@
 		<br>
 
 		<div class="jumbotron title">
-			<h1 class="title">Metro Boston Train Schedule</h1>
+			<h2 class="title">Metro Boston Train Schedule</h2>
 		</div>
 
 		<div class="row">
 			<div class="col-sm-12">
 				<div class="panel panel-default train">
-					<h3 class="panel-title">Current Train Schedule</h3>
+					<h3 class="panel-title title">Current Train Schedule</h3>
 				</div>
 				<div class="panel-body">
-					<table class="table">
+					<table class="train-table striped">
         		<thead>
           		<tr>
 		            <th>Train Name</th>
@@ -33,6 +34,9 @@
 		          </tr>
         		</thead>
         		<tbody id="train-list"></tbody>
+        		<tr>
+
+        		</tr>
       		</table> 
 				</div>
 			</div>
@@ -41,7 +45,7 @@
 		<div class="row">
 			<div class="col-sm-12">
 				<div class="panel panel-default train">
-					<h3 class="panel-title">Add A Train</h3>
+					<h3 class="panel-title title">Add A Train</h3>
 				</div>
 
 				<div class="panel-body">
@@ -57,8 +61,8 @@
 						</div>
 
 						<div class="form-group">
-							<label for="time-input">First Train Time (HH:mm - Military Time)</label>
-							<input class="form-control" id="time-input" type="number">
+							<label for="time-input">First Train Arrival Time (HH:mm - Military Time)</label>
+							<input class="form-control" id="time-input" type="time">
 						</div>
 
 						<div class="form-group">

@@ -16,15 +16,22 @@ body {
 	background-color: #1e4d99;
 	color: black;
 }
+.title {
+	padding-left: 10px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	background: #c0c9d8;
 
-/*.train {
-	border-style: solid;
-	border-width: 2px;
-}*/
+}
 
-h3 {
+.train-table, #train-list th, td {
+	border: 2px solid #bbbec1;
+	width: 100%;
+}
+
+h2 {
 	background-color: #79a2e5;
-	padding-top: 15px;
-	padding-bottom: 15px;
+	padding-top: 35px;
+	padding-bottom: 35px;
 	padding-left: 16px;
 }
