@@ -69,7 +69,6 @@ $(document).ready(function() {
 		// Create Firebase listener for child changes then download data to client in table format.
 		database.ref("trains").on("child_added", function(trainData) {
 		console.log(trainData.val());
-
 			$("#name-input").val("");
 			$("#dest-input").val("");
 			$("#time-input").val("");
@@ -78,6 +77,8 @@ $(document).ready(function() {
 
 			$("#train-list").append(
 			"<tr><td>" + name + "<td>" + dest  + "<td>" + freq + "<td>" + nextArrival + "<td>" + minsAway + "</td></tr>");
+
+			$(".form-control").val('');
 
 	})
 })
