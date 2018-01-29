@@ -14,6 +14,16 @@ body {
 	text-align: center;
 	background-color: #1e4d99;
 	color: black;
+/*	background-image: url(assets/images/train.jpg);
+background-size: cover;
+height: 100%;*/
+
+}
+
+.jumbotron {
+background-image: url(assets/images/train.jpg);
+background-size: cover;
+height: 100%;
 }
 
 div.panel.train {
@@ -26,9 +36,6 @@ div.panel.train {
 	font-size: 15px;
 }
 
-.train-row {
-	background-color: #638bcc;
-}
 .title {
 	padding-top: 10px;
 	padding-bottom: 10px;
@@ -48,24 +55,10 @@ div.panel-body {
 	padding: 0px;
 }
 
-.train-table, #train-list, th, tr, td {
-	width: 100%;
-	max-width: 96%
-	margin: 2px 20px 0 10px;
-	border-bottom:0;
-}
-
 label, h3, th, td {
-	padding-left: 5px;
-}
-td {
-	padding-right: 10px;
+	padding-left: 10px;
 }
 
-tr {
-	margin-right: 10px;
-	width: 90%;
-}
 div.form-group {
 	margin: 0px 10px;
 }
@@ -77,21 +70,18 @@ div.form-group {
 }
 
 div.panel {
-	border: .5px solid #1e4d99;
-	padding-left: 10px;
-	padding-right: 0px;
-	padding: 0;
+	border: 1px solid #1e4d99;
+	padding:0px;
+}
+
+th {
+	background-color: #a3bfed;
 }
 
 th, td {
     text-align: left;
-    width: 20%;
+
 }
 
-h2 {
-	background-color: #79a2e5;
-	padding-top: 35px;
-	padding-bottom: 35px;
-	padding-left: 16px;
-}
+
 
