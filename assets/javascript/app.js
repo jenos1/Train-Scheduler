@@ -1,6 +1,5 @@
-$(document).ready(function() {
+$(document).ready(function () {
 
-	// Initialize Firebase
 	var config = {
 		apiKey: "AIzaSyAhzbkgzUqUZloR9SCVe3LtboKh20u0aaw",
 		authDomain: "trains-f0aaf.firebaseapp.com",
@@ -14,25 +13,14 @@ $(document).ready(function() {
 
 	var database = firebase.database();
 
-	// Assign variables. 
-  var name = "";
-  var dest = ""; 
-  var freq = 0;
-  var nextArrival = 0;
-  var minsAway = 0;
-  var time = 0;
-
-	$("#submit").on("click", function(event) {
-		// Prevent page refresh to preserve data.
+	$("#submit").on("click", function (event) {
 		event.preventDefault();
 
-		// Stores user input in existing variables.
-		name = $("#name-input").val().trim();
-		dest = $("#dest-input").val().trim();
-		time = $("#time-input").val().trim();
-		freq = $("#freq-input").val().trim();	
+		var name = $("#name-input").val().trim();
+		var dest = $("#dest-input").val().trim();
+		var time = $("#time-input").val().trim();
+		var freq = $("#freq-input").val().trim();
 
-		// Creates an object to hold train data
 		var trainInput = {
 			name: name,
 			dest: dest,
@@ -40,8 +28,19 @@ $(document).ready(function() {
 			freq: freq,
 		}
 
-		// Moment.js time calculations for trains - define variables.
+		database.ref("trains").push(trainInput);
+		$(".form-control").val('');
 
+	})
+
+	// Create Firebase listener for onclick child changes then download data to client in table format.
+	database.ref("trains").on("child_added", function (trainData) {
+		var name = (trainData.val().name);
+		var dest = (trainData.val().dest);	
+		var time = (trainData.val().time);
+		var freq = (trainData.val().freq);
+
+	// Moment.js - use time calculations to convert train time.
 		// Current Time
 		var currTime = moment().format("HH:mm");
 		// First Time converstion (Must be pushed back 1 year to make sure it comes before current time).
@@ -49,37 +48,15 @@ $(document).ready(function() {
 		// Difference between current time & converted time in minutes.
 		var diffTime = moment().diff(moment(firstTimeConverted), "minutes");
 		// Time apart (remainder)
-	  var tRemainder = diffTime % freq;
-	  // Minutes until next train.
-	  var minsAway = freq - tRemainder;
+		var tRemainder = diffTime % freq;
+		// Minutes until next train.
+		var minsAway = freq - tRemainder;
 		var nextTrain = (moment().add(minsAway, "minutes")).format("hh:mm");
-	  var nextArrival = nextTrain.toString();
+		var nextArrival = nextTrain.toString();
 
-		console.log("Current Time is: ", currTime);
-		console.log("FirstTimeConverted: ", firstTimeConverted);
-		console.log("TimeDiff now & firstArrivaltime converted: ", diffTime);
-		console.log("Remainder: ", tRemainder);
-	  console.log("Minutes Away: ", minsAway);
-	  console.log(nextArrival);
-
-		// Loads data into Firebase db.
-		database.ref().push(trainInput);
-		// $(".form-control").val('');
-
-		// Create Firebase listener for child changes then download data to client in table format.
-		database.ref("trains").on("child_added", function(trainData) {
-		console.log(trainData.val());
-			$("#name-input").val("");
-			$("#dest-input").val("");
-			$("#time-input").val("");
-			$("#freq-input").val("");
-	 		 });
-
-			$("#train-list").append(
-			"<tr><td>" + name + "<td>" + dest  + "<td>" + freq + "<td>" + nextArrival + "<td>" + minsAway + "</td></tr>");
-
-			$(".form-control").val('');
+		$("#train-list").append(
+		"<tr><td>" + trainData.val().name + "<td>" + trainData.val().dest
+		+ "<td>" + trainData.val().freq + "<td>" + nextArrival + "<td>" + minsAway + "</td></tr>");
 
 	})
-})
-
+});
